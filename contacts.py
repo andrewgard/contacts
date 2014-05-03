@@ -12,10 +12,6 @@ class Contact:
 			self.group.append(group)
 
 	def __str__(self):
-<<<<<<< HEAD
-				
-class Group:
-=======
 		return("{0}, {1}\n\tHome #: {2}\n\tWork #: {3}\n\tCell #: {4}".format(self.last, self.first, self.home, self.work, self.cell))
 
 	def edit(self, param):
@@ -40,37 +36,52 @@ class Group:
 
 class Group:
 
->>>>>>> 2a223d14b09b667634d4e2a3b53a8dea9c6044fb
 	def __init__(self, name):
 		self.name = name 
 		self.members = [] 	
 		
 
 	def __str__(self):
-<<<<<<< HEAD
-		return self.name + "\nmembers: " + ", ".join(self.members)		
-
+		return self.name + "\nmembers: " + ", ".join(str(self.members[0]))		
 	def add(self, contact):
 		self.members.append(contact)
 
 	def remove(self, firstname, lastname):
 		for contact in self.members:
-			if (contact.first == firstname && contact.last == lastname):
+			if (contact.first == firstname and contact.last == lastname):
 				self.members.remove(contact)
 	
 	def search(self, searchparam, val):
+		result = []
 		if(searchparam == 'first'):
 			for contact in self.members:
 				if(contact.first == val):
-					return contact
-
+					result.append( contact )
+			return result
+		if(searchparam == 'last'):
+			for contact in self.members:
+				if(contact.last == val):
+					result.append( contact )
+			return result
+		if(searchparam == 'home'):
+			for contact in self.members:
+				if(contact.home == val):
+					result.append( contact )
+			return result
+		if(searchparam == 'work'):
+			for contact in self.members:
+				if(contact.work ==val):
+					result.append( contact ) 
+			return result
+		if(searchparam == 'cell'):
+			for contact in self.members:
+				if(contact.cell == val):
+					result.append( contact )
+			return result
+					
 		 	
 		
-=======
-		#todo
-		pass
 
->>>>>>> 2a223d14b09b667634d4e2a3b53a8dea9c6044fb
 class Book:
 
 	def __init__(self, data, name):
@@ -79,8 +90,4 @@ class Book:
 		self.contacts = []
 
 	def __str__(self):
-<<<<<<< HEAD
-=======
-		#todo
 		pass
->>>>>>> 2a223d14b09b667634d4e2a3b53a8dea9c6044fb
