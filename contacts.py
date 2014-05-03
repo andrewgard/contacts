@@ -2,20 +2,30 @@
 class Contact:
 
 	def __init__(self, data):
-		self.first = data['first']
-		self.last = data['last']
-		self.home = data['home']
-		self.work = data['work']
-		self.cell = data['cell']
-		self.group = []
-		for group in data['group']:
-			self.group.append(group)
+		if(type(data) is dict):
+			self.first = data['first']
+			self.last = data['last']
+			self.home = data['home']
+			self.work = data['work']
+			self.cell = data['cell']
+			self.group = []
+			for group in data['group']:
+				self.group.append(group)
+		else:
+			self.first = data[0]
+			self.last = data[1]
+			self.home = data[2]
+			self.work = data[3]
+			self.cell = data[4]
+			self.group = []
+			for item in data[5]:
+				self.group.append(item)
 
 	def __str__(self):
-		return("{0}, {1}\n\tHome #: {2}\n\tWork #: {3}\n\tCell #: {4}".format(self.last, self.first, self.home, self.work, self.cell))
+		return("{0}, {1}\n\tHome #: {2}\n\tWork #: {3}\n\tCell #: {4}\n\tGroups: {5}".format(self.last, self.first, self.home, self.work, self.cell, ", ".join(self.group)))
 
 	def edit(self, param):
-		new_str = input('New vlaue: ')
+		new_str = input('New value: ')
 		action = getattr(self, param)
 		action(new_str)
 
