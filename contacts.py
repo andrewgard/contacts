@@ -43,6 +43,8 @@ class Contact:
 
 	def set_cell_phone(self, new_str):
 		self.cell = new_str
+	def add_to_group(self, new_str):
+		self.group.append(new_str)
 
 class Group:
 
@@ -52,7 +54,8 @@ class Group:
 		
 
 	def __str__(self):
-		return self.name + "\nmembers: " + str(self.members[0]		
+		return self.name + '\n'  + '\n '.join(str(contact) for contact in self.members)		
+	
 	def add(self, contact):
 		self.members.append(contact)
 
