@@ -22,6 +22,9 @@ class Contact:
 				self.group.append(item)
 
 	def __str__(self):
+		return ("{0}, {1}\n".format( self.last, self.first))
+
+	def print_details(self):
 		return("{0}, {1}\n\tHome #: {2}\n\tWork #: {3}\n\tCell #: {4}\n\tGroups: {5}".format(self.last, self.first, self.home, self.work, self.cell, ", ".join(self.group)))
 
 	def edit(self, param):
@@ -52,7 +55,8 @@ class Group:
 		
 
 	def __str__(self):
-		return self.name + "\nmembers: " + str(self.members[0]		
+		return self.name + "\nmembers: " + str(self.members[0])
+
 	def add(self, contact):
 		self.members.append(contact)
 
