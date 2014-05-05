@@ -52,7 +52,7 @@ class Group:
 		
 
 	def __str__(self):
-		return self.name + "\nmembers: " + ", ".join(str(self.members[0]))		
+		return self.name + "\nmembers: " + str(self.members[0]		
 	def add(self, contact):
 		self.members.append(contact)
 
