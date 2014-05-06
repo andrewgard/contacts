@@ -33,14 +33,5 @@ groupA = Group('theName')
 groupA.add(contact1)
 groupA.add(contact2)
 
-exists = []
-flag = 0
-'''for group in contact1.group:
-	for nonew in exists:
-		if(group == nonew.name):
-			flag = 1
-			nonew.add(contact1)
-	if(flag == 0):	
-		exists.append(Group(group))'''
+print (groupA)
 
-print (groupA) 
