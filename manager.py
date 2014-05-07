@@ -5,10 +5,12 @@ import sys
 
 def print_help():
 	print("Commands:")
-	print("\tadd contact <last name> <first name>\t\t\t\t-Add a new contact to the current contact book.")
-	print("\tadd group <group name>\t\t\t\t\t\t-Add a new group to the current contact book.")
-	print("\tprint [contact <last name> <first name> | group <name> | all]\t-Prints corresponding value.")
-	print("\tsearch <first name> <last name> [group <name> | all]\t\t-Search a group or all contacts.")
+	print("add [contact <last name> <first name> | group <group name>]\t-Add a new contact or group to the current contact book.")
+	print("print [contact <last name> <first name> | group <group name> | all]\t-Prints corresponding value.")
+	print("search <last name> <first name> [group <group name> | all]\t-Search a group or all contacts.")
+	print("edit <first name> <last name> [first | last | home | work | cell | address]")
+	print("add_to_group <last name> <first name> <group name>")
+	print("help\t-prints this message")
 
 if(len(sys.argv) < 2):
 	print("Need a contact book .yaml file")
