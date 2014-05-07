@@ -107,22 +107,24 @@ class Book:
 
 		for cont in self.contacts:
 			for group in cont.group:
-				if(group_exists(name, match)):
-					match.add(cont)
+				check = self.group_exists(group)
+				if(check[0]):
+					check[1].add(cont)
 				else:
-					temp = Group(name)
-					temp.add(name)
+					temp = Group(group)
+					temp.add(cont)
 					self.groups.append(temp)
 
 	def __str__(self):
-		return ("".join(str(self.groups)))
+		return ("Groups:\n\t" + "\n\t".join(l.name for l in self.groups) + "\nContacts:\n\t" + "\t".join(str(c) for c in self.contacts))
 
-	def group_exists(self, name, match):
+	def group_exists(self, name):
 		exists = False
+		match = None
 		for group in self.groups:
 			if(group.name == name):
 				match = group
 				exists = True
 				break
-		return exists
+		return (exists, match)
 		
