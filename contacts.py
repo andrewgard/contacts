@@ -127,4 +127,33 @@ class Book:
 				exists = True
 				break
 		return (exists, match)
-		
+	
+	def search(self, searchparam, val):
+		result = []
+		if(searchparam == 'first'):
+			for contact in self.contacts:
+				if(contact.first == val):
+					result.append( contact )
+			return result
+		elif(searchparam == 'last'):
+			for contact in self.contacts:
+				if(contact.last == val):
+					result.append( contact )
+			return result
+		elif(searchparam == 'home'):
+			for contact in self.contacts:
+				if(contact.home == val):
+					result.append( contact )
+			return result
+		elif(searchparam == 'work'):
+			for contact in self.contacts:
+				if(contact.work ==val):
+					result.append( contact ) 
+			return result
+		elif(searchparam == 'cell'):
+			for contact in self.contacts:
+				if(contact.cell == val):
+					result.append( contact )
+			return result
+
+	
