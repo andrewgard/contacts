@@ -102,5 +102,27 @@ class Book:
 		self.name = name
 		self.contacts = []
 
+		for key in data:
+			self.contacts.append(Contact(data[key]))
+
+		for cont in self.contacts:
+			for group in cont.group:
+				if(group_exists(name, match)):
+					match.add(cont)
+				else:
+					temp = Group(name)
+					temp.add(name)
+					self.groups.append(temp)
+
 	def __str__(self):
-		pass
+		return ("".join(str(self.groups)))
+
+	def group_exists(self, name, match):
+		exists = False
+		for group in self.groups:
+			if(group.name == name):
+				match = group
+				exists = True
+				break
+		return exists
+		
