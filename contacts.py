@@ -57,7 +57,7 @@ class Group:
 		
 
 	def __str__(self):
-		return self.name + '\n' + ''.join(str(contact) for contact in self.members)		
+		return self.name + ':\n\t' + '\t'.join(str(contact) for contact in self.members)		
 
 	def add(self, contact):
 		self.members.append(contact)
@@ -74,22 +74,22 @@ class Group:
 				if(contact.first == val):
 					result.append( contact )
 			return result
-		else if(searchparam == 'last'):
+		elif(searchparam == 'last'):
 			for contact in self.members:
 				if(contact.last == val):
 					result.append( contact )
 			return result
-		else if(searchparam == 'home'):
+		elif(searchparam == 'home'):
 			for contact in self.members:
 				if(contact.home == val):
 					result.append( contact )
 			return result
-		else if(searchparam == 'work'):
+		elif(searchparam == 'work'):
 			for contact in self.members:
 				if(contact.work ==val):
 					result.append( contact ) 
 			return result
-		else if(searchparam == 'cell'):
+		elif(searchparam == 'cell'):
 			for contact in self.members:
 				if(contact.cell == val):
 					result.append( contact )
