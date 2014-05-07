@@ -8,6 +8,4 @@ if(len(sys.argv) < 2):
 	sys.exit()
 
 data = h.load(sys.argv[1])
-
-thebook = h.Book(data, 'Book 1')
 print(thebook)
