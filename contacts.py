@@ -116,7 +116,7 @@ class Book:
 					self.groups.append(temp)
 
 	def __str__(self):
-		return ("".join(str(l)for l in self.groups))
+		return ("Groups:\n\t" + "\n\t".join(l.name for l in self.groups) + "\nContacts:\n\t" + "\t".join(str(c) for c in self.contacts))
 
 	def group_exists(self, name):
 		exists = False
