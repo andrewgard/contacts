@@ -74,27 +74,27 @@ class Group:
 				if(contact.first == val):
 					result.append( contact )
 			return result
-		if(searchparam == 'last'):
+		else if(searchparam == 'last'):
 			for contact in self.members:
 				if(contact.last == val):
 					result.append( contact )
 			return result
-		if(searchparam == 'home'):
+		else if(searchparam == 'home'):
 			for contact in self.members:
 				if(contact.home == val):
 					result.append( contact )
 			return result
-		if(searchparam == 'work'):
+		else if(searchparam == 'work'):
 			for contact in self.members:
 				if(contact.work ==val):
 					result.append( contact ) 
 			return result
-		if(searchparam == 'cell'):
+		else if(searchparam == 'cell'):
 			for contact in self.members:
 				if(contact.cell == val):
 					result.append( contact )
 			return result
-					
+
 class Book:
 
 	def __init__(self, data, name):
