@@ -127,7 +127,19 @@ class Book:
 				exists = True
 				break
 		return (exists, match)
+
+	def findGroup(self, name):
+		for group in self.groups:
+			if(name == group.name):
+				return group
+
+
+	def add(self, contact):
+		self.contacts.append(contact)
 	
+	def addGroup(self, name):
+		self.groups.append(Group(name))
+		
 	def search(self, searchparam, val):
 		result = []
 		if(searchparam == 'first'):
