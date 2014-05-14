@@ -1,0 +1,16 @@
+Cronin:
+    first: Chris
+    last: Cronin
+    home: 999-999-9999
+    work: 999-999-9999
+    cell: 999-999-9999
+    address: 1 road town, state
+    group: [work, friends, other]
+Gardner:
+    first: Andrew
+    last: Gardner
+    home: 999-999-9999
+    work: 999-999-9999
+    cell: 999-999-9999
+    address: 1 road town, state
+    group: [work, other]
